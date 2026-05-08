@@ -1,31 +1,38 @@
-async function sendForm() {
+const form = document.getElementById("applicationForm");
+const successScreen = document.getElementById("successScreen");
+const trackCode = document.getElementById("trackCode");
 
-    const data = {
-        name: document.getElementById('name').value,
-        age: document.getElementById('age').value,
-        phone: document.getElementById('phone').value,
-        telegram: document.getElementById('telegram').value,
-        experience: document.getElementById('experience').value,
-        hours: document.getElementById('hours').value,
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        fio: form.fio.value,
+        birth: form.birth.value,
+        phone: form.phone.value,
+        telegram: form.telegram.value,
+        experience: form.experience.value,
+        time: form.time.value
+    };
+
+    try {
+
+        const response = await fetch("/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        trackCode.textContent = data.track_code;
+
+        successScreen.style.display = "flex";
+
+    } catch (error) {
+
+        alert("Ошибка отправки заявки");
+
     }
-
-    const response = await fetch('/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-
-    const result = await response.json()
-
-    document.getElementById('success').innerHTML = `
-        <div style="margin-top:20px;">
-            ✅ Заявка отправлена<br><br>
-            Ваш HR-код:<br>
-            <span style="font-size:42px;font-weight:700;">
-                ${result.track_code}
-            </span>
-        </div>
-    `
-}
+});
