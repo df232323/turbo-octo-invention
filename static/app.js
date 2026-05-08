@@ -11,7 +11,8 @@ form.addEventListener("submit", async (e) => {
         phone: form.phone.value,
         telegram: form.telegram.value,
         experience: form.experience.value,
-        time: form.time.value
+        time: form.time.value,
+device: document.querySelector('input[name="device"]:checked').value
     };
 
     try {
