@@ -2,6 +2,6 @@ BOT_TOKEN = "8600740674:AAH8BMMwbcpmYRV45NUtB1QgScvugPAG6Rk"
 
 GROUP_ID = -1003912776493
 
-MANAGER_USERNAME = "your_username"
+MANAGER_USERNAME = "sdasdasd33332231"
 
 WEBAPP_URL = "https://your-domain.ru"
