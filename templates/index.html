@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ozon HR</title>
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="logo">Ozon Marketplace</div>
+
+    <h1>Анкета менеджера маркетплейсов</h1>
+
+    <div class="benefits">
+      <div>💰 Доход от 80.000 ₽</div>
+      <div>🏠 Работа удаленно</div>
+      <div>📚 Обучение с нуля</div>
+      <div>📈 Карьерный рост</div>
+    </div>
+
+    <input id="name" placeholder="Ваше имя">
+    <input id="age" placeholder="Возраст">
+    <input id="phone" placeholder="Телефон">
+    <input id="telegram" placeholder="Telegram">
+
+    <select id="experience">
+      <option>Есть опыт</option>
+      <option>Нет опыта</option>
+    </select>
+
+    <select id="hours">
+      <option>2-4 часа</option>
+      <option>4-6 часов</option>
+      <option>6-8 часов</option>
+    </select>
+
+    <button onclick="sendForm()">
+      Оставить заявку
+    </button>
+
+    <div id="success"></div>
+
+  </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
