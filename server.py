@@ -17,8 +17,8 @@ MANAGER_USERNAME = os.getenv("MANAGER_USERNAME")
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
-        "index.html", 
-        context={"request": request}
+        "index.html",
+        {"request": request}
     )
 
 @app.post("/submit")
