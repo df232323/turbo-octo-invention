@@ -16,7 +16,10 @@ MANAGER_USERNAME = os.getenv("MANAGER_USERNAME")
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        "index.html", 
+        context={"request": request}
+    )
 
 @app.post("/submit")
 async def submit(request: Request):
@@ -39,4 +42,4 @@ async def submit(request: Request):
         json={"chat_id": GROUP_ID, "text": text}
     )
     
-    return JSONResponse({"success": True, "track_code": track_code})
+    return JSONResponse(content={"success": True, "track_code": track_code})
