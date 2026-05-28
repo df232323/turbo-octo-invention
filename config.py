@@ -1,4 +1,2 @@
-BOT_TOKEN = ""
-GROUP_ID = ""
-MANAGER_USERNAME = ""
-WEBAPP_URL = "
+# Все секреты хранятся в Railway Variables
+# Этот файл для дополнительных настроек (если нужны)
