@@ -13,6 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Берем переменные именно из среды Railway (те самые, что на вашем скриншоте)
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_ID = os.getenv("GROUP_ID")
 MANAGER_USERNAME = os.getenv("MANAGER_USERNAME")
@@ -37,13 +38,13 @@ async def submit(request: Request):
 🆕 Новая заявка PRISM AGENCY
 
 👤 ФИО: {data.get('fio')}
-🎂 Дата рождения: {data.get('birth')}
-📱 Телефон: {data.get('phone')}
-✈ Telegram: {data.get('telegram')}
+ Дата рождения: {data.get('birth')}
+ Телефон: {data.get('phone')}
+ Telegram: {data.get('telegram')}
 
 💼 Опыт: {data.get('experience')}
-⏰ Время: {data.get('time')}
-📲 Смартфон: {data.get('device')}
+ Время: {data.get('time')}
+ Смартфон: {data.get('device')}
 
 🆔 HR-код: {track_code}
 """
