@@ -13,7 +13,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_ID = os.getenv("GROUP_ID")
-MANAGER_USERNAME = os.getenv("MANAGER_USERNAME")
 
 # Читаем HTML шаблон
 BASE_DIR = Path(__file__).parent
@@ -49,6 +48,6 @@ async def submit(request: Request):
             timeout=10
         )
     except Exception as e:
-        print(f"Error sending to Telegram: {e}")
+        print(f"Error: {e}")
     
     return JSONResponse(content={"success": True, "track_code": track_code})
