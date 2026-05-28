@@ -17,7 +17,6 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_ID = os.getenv("GROUP_ID")
 MANAGER_USERNAME = os.getenv("MANAGER_USERNAME")
 
-
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
@@ -28,16 +27,14 @@ async def home(request: Request):
         }
     )
 
-
 @app.post("/submit")
 async def submit(request: Request):
-
     data = await request.json()
-
+    
     track_code = random.randint(1000, 9999)
-
+    
     text = f"""
-🆕 Новая заявка Ozon
+🆕 Новая заявка PRISM AGENCY
 
 👤 ФИО: {data.get('fio')}
 🎂 Дата рождения: {data.get('birth')}
@@ -50,7 +47,7 @@ async def submit(request: Request):
 
 🆔 HR-код: {track_code}
 """
-
+    
     requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
         json={
@@ -58,7 +55,7 @@ async def submit(request: Request):
             "text": text
         }
     )
-
+    
     return JSONResponse({
         "success": True,
         "track_code": track_code
