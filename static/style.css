@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#050816;
+    background:#000000;
     color:white;
     min-height:100vh;
     display:flex;
@@ -22,57 +22,77 @@ body{
 }
 
 .card{
-    background:linear-gradient(180deg,#12192b,#0d1322);
+    background:linear-gradient(180deg,#0a0a0a,#050505);
     border-radius:28px;
     padding:22px;
-    box-shadow:0 0 35px rgba(0,0,0,.45);
+    box-shadow:0 0 50px rgba(100,200,255,0.15);
+    border:1px solid rgba(150,200,255,0.1);
 }
 
 .logo{
-    color:#0b6cff;
-    font-size:34px;
+    background:linear-gradient(90deg,#c0c0c0,#7dd3fc,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    font-size:32px;
     font-weight:800;
     margin-bottom:12px;
     display:flex;
     align-items:center;
     gap:10px;
+    letter-spacing:2px;
 }
 
 h1{
-    font-size:34px;
+    font-size:30px;
     line-height:1.15;
     margin-bottom:18px;
-    font-weight:800;
+    font-weight:700;
+    background:linear-gradient(90deg,#e0e0e0,#60a5fa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
 
 .benefits{
     font-size:16px;
     line-height:1.7;
     margin-bottom:22px;
-    color:#f2f2f2;
+    color:#d1d5db;
 }
 
 input,
 select{
     width:100%;
-    background:#1e2637;
-    border:none;
+    background:linear-gradient(180deg,#1a1a1a,#0f0f0f);
+    border:1px solid rgba(150,200,255,0.15);
     border-radius:18px;
     padding:16px;
     color:white;
     font-size:16px;
     margin-bottom:14px;
     outline:none;
+    transition:all 0.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#7dd3fc;
+    box-shadow:0 0 20px rgba(125,211,252,0.3);
 }
 
 input::placeholder{
-    color:#8d96aa;
+    color:#6b7280;
 }
 
 .label{
     margin:10px 0;
-    font-size:16px;
+    font-size:15px;
     font-weight:600;
+    background:linear-gradient(90deg,#d1d5db,#93c5fd);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
 
 button{
@@ -85,19 +105,28 @@ button{
     color:white;
     cursor:pointer;
     margin-top:15px;
-    background:linear-gradient(90deg,#0f66ff,#8d42ff);
-    transition:.3s;
+    background:linear-gradient(90deg,#67e8f9,#a78bfa,#f472b6);
+    background-size:200% 100%;
+    transition:all 0.3s;
+    animation:gradient 5s ease infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 button:hover{
-    opacity:.92;
-    transform:scale(.99);
+    opacity:0.95;
+    transform:scale(1.02);
+    box-shadow:0 0 30px rgba(167,139,250,0.4);
 }
 
 .success-screen{
     position:fixed;
     inset:0;
-    background:rgba(5,8,22,.96);
+    background:rgba(0,0,0,0.98);
     display:none;
     justify-content:center;
     align-items:center;
@@ -108,11 +137,12 @@ button:hover{
 .success-box{
     width:100%;
     max-width:380px;
-    background:linear-gradient(180deg,#10192d,#0a1222);
+    background:linear-gradient(180deg,#0f0f0f,#050505);
     border-radius:28px;
     padding:30px 24px;
     text-align:center;
-    box-shadow:0 0 40px rgba(0,0,0,.5);
+    box-shadow:0 0 60px rgba(125,211,252,0.2);
+    border:1px solid rgba(150,200,255,0.15);
 }
 
 .success-icon{
@@ -121,25 +151,34 @@ button:hover{
 }
 
 .success-box h2{
-    font-size:30px;
+    font-size:28px;
     margin-bottom:10px;
+    background:linear-gradient(90deg,#67e8f9,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
 
 .success-box p{
     font-size:16px;
-    opacity:.9;
+    opacity:0.9;
     margin-bottom:20px;
+    color:#9ca3af;
 }
 
 .track-title{
-    font-size:18px;
+    font-size:16px;
     margin-bottom:10px;
+    color:#d1d5db;
 }
 
 .track-code{
     font-size:54px;
     font-weight:800;
-    color:#46ff79;
+    background:linear-gradient(90deg,#67e8f9,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
     margin-bottom:24px;
 }
 
@@ -147,7 +186,7 @@ button:hover{
     font-size:15px;
     line-height:1.5;
     margin-bottom:20px;
-    color:#d5d9e3;
+    color:#9ca3af;
 }
 
 .manager-btn{
@@ -159,8 +198,14 @@ button:hover{
     color:white;
     font-size:17px;
     font-weight:700;
-    background:linear-gradient(90deg,#0ea5ff,#9448ff);
+    background:linear-gradient(90deg,#22d3ee,#a78bfa);
     margin-bottom:12px;
+    transition:all 0.3s;
+}
+
+.manager-btn:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(167,139,250,0.4);
 }
 
 .close-btn{
@@ -172,7 +217,13 @@ button:hover{
     color:white;
     font-size:16px;
     font-weight:600;
-    background:#232c3f;
+    background:linear-gradient(180deg,#262626,#171717);
+    border:1px solid rgba(150,200,255,0.1);
+    transition:all 0.3s;
+}
+
+.close-btn:hover{
+    border-color:#7dd3fc;
 }
 
 .device-selector{
@@ -183,15 +234,16 @@ button:hover{
 
 .device-card{
     flex:1;
-    background:#1d2638;
+    background:linear-gradient(180deg,#1a1a1a,#0f0f0f);
     padding:14px;
     border-radius:16px;
     text-align:center;
     font-size:15px;
     font-weight:700;
     cursor:pointer;
-    border:2px solid transparent;
-    transition:.3s;
+    border:2px solid rgba(150,200,255,0.1);
+    transition:all 0.3s;
+    color:#d1d5db;
 }
 
 .device-card input{
@@ -199,12 +251,15 @@ button:hover{
 }
 
 .device-card:hover{
-    border-color:#4f7cff;
+    border-color:#7dd3fc;
+    box-shadow:0 0 20px rgba(125,211,252,0.2);
 }
 
 .device-card.active{
-    border-color:#4f7cff;
-    background:#24314a;
+    border-color:#a78bfa;
+    background:linear-gradient(180deg,#262626,#171717);
+    color:white;
+    box-shadow:0 0 25px rgba(167,139,250,0.3);
 }
 
 .device-card span{
@@ -212,7 +267,6 @@ button:hover{
 }
 
 @media(max-width:480px){
-
     body{
         padding:10px;
     }
@@ -223,11 +277,11 @@ button:hover{
     }
 
     .logo{
-        font-size:30px;
+        font-size:28px;
     }
 
     h1{
-        font-size:28px;
+        font-size:26px;
     }
 
     .benefits{
@@ -247,5 +301,4 @@ button:hover{
     .track-code{
         font-size:48px;
     }
-
 }
